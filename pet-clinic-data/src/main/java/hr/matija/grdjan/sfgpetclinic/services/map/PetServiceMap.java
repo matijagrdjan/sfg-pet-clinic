@@ -3,9 +3,11 @@ package hr.matija.grdjan.sfgpetclinic.services.map;
 
 import hr.matija.grdjan.sfgpetclinic.model.Pet;
 import hr.matija.grdjan.sfgpetclinic.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
