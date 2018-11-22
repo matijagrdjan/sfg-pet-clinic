@@ -2,11 +2,11 @@ package hr.matija.grdjan.sfgpetclinic.services.map;
 
 
 import hr.matija.grdjan.sfgpetclinic.model.Pet;
-import hr.matija.grdjan.sfgpetclinic.services.CrudServices;
+import hr.matija.grdjan.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudServices<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
