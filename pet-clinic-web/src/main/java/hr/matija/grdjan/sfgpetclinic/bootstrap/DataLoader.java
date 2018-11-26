@@ -1,8 +1,10 @@
 package hr.matija.grdjan.sfgpetclinic.bootstrap;
 
 import hr.matija.grdjan.sfgpetclinic.model.Owner;
+import hr.matija.grdjan.sfgpetclinic.model.PetType;
 import hr.matija.grdjan.sfgpetclinic.model.Vet;
 import hr.matija.grdjan.sfgpetclinic.services.OwnerService;
+import hr.matija.grdjan.sfgpetclinic.services.PetTypeService;
 import hr.matija.grdjan.sfgpetclinic.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,16 +15,26 @@ public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
+    private final PetTypeService petTypeService;
     @Autowired
-    public DataLoader(OwnerService ownerService, VetService vetService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
+        this.petTypeService = petTypeService;
     }
 
 
 
     @Override
     public void run(String... args) throws Exception {
+
+        PetType dog = new PetType();
+        dog.setName("Dog");
+        PetType savedDogPetType = petTypeService.save(dog);
+
+        PetType cat = new PetType();
+        dog.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
 
         Owner owner1 = new Owner();
 
