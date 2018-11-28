@@ -2,12 +2,14 @@ package hr.matija.grdjan.sfgpetclinic.services.map;
 
 import hr.matija.grdjan.sfgpetclinic.model.PetType;
 import hr.matija.grdjan.sfgpetclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
+@Profile({"default","map"})
+public class PetTypeServiceMap extends AbstractServiceMap<PetType, Long> implements PetTypeService {
     @Override
     public Set<PetType> findAll() {
         return super.findAll();
